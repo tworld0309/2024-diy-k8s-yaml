@@ -19,6 +19,8 @@ spec:
         ports:
         - containerPort: 3000
         env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: dev
         - name: DB_HOST
           valueFrom:
             configMapKeyRef:
