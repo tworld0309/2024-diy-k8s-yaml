@@ -3,14 +3,14 @@ kind: NetworkPolicy
 metadata:
   name: allow-specific-ip
   namespace: diy-k8s
-spec:
-  podSelector:
-    matchLabels:
-      app: postgres
-  ingress:
-  - from:
-    - ipBlock:
-        cidr: "192.168.45.0/24"  # 접근을 허용할 IP 범위
-    ports:
-    - protocol: TCP
-      port: 5432
+    #spec:
+  #podSelector:
+    # matchLabels:
+      #  app: postgres
+        #ingress:
+        # - from:
+    #- ipBlock:
+    #    cidr: "192.168.45.0/24"  # 접근을 허용할 IP 범위
+    #ports:
+    # - protocol: TCP
+    #  port: 5432
