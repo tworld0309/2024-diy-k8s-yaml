@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-specific-ip
+  namespace: diy-k8s
+spec:
+  podSelector:
+    matchLabels:
+      app: postgres
+  ingress:
+  - from:
+    - ipBlock:
+        cidr: "203.0.113.0/24"  # 접근을 허용할 IP 범위
+    ports:
+    - protocol: TCP
+      port: 5432
